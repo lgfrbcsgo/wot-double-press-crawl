@@ -66,7 +66,7 @@ class CrawlInputHandler:
 
         hotkey = config.get('hotkey', {})
         self.hotkey_enabled = hotkey.get('enabled', False)
-        self.hotkey_key = getattr(Keys, 'KEY_%s' % hotkey.get('key', ''), Keys.KEY_LCONTROL)
+        self.hotkey_key = getattr(Keys, 'KEY_%s' % str(hotkey.get('key', '')), Keys.KEY_LCONTROL)
 
         self._last_pressed_key = None
         self._last_pressed_key_time = 0
